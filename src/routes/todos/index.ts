@@ -13,7 +13,8 @@ export const get: RequestHandler = async ({ url }) => {
 	const fullPage = url.searchParams.get('fullPage');
 
 	const browser = await puppeteer.launch({
-		args: ['--no-sandbox', '--disable-setuid-sandbox']
+		headless: true,
+		args: ['--no-sandbox']
 	});
 	const page = await browser.newPage();
 	// @ts-ignore
