@@ -37,7 +37,7 @@
 	const downloadImage = () => {
 		loadingDownload = true;
 		axios({
-			url: `http://localhost:3000/todos?website=${body.website}&width=${body.width}&height=${body.height}&fullPage=${body.fullPage}`,
+			url: `/todos?website=${body.website}&width=${body.width}&height=${body.height}&fullPage=${body.fullPage}`,
 			method: 'GET',
 			responseType: 'blob',
 			signal: controller.signal,
