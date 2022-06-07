@@ -15,10 +15,7 @@ const config = {
 		methodOverride: {
 			allowed: ['PATCH', 'DELETE']
 		},
-		adapter: adapter({
-			edge: true,
-			split: false
-		})
+		adapter: adapter()
 	}
 };
 
