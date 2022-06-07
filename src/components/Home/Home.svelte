@@ -42,7 +42,9 @@
 
 <Notification show={showNotification} />
 <main class="box-shawdow">
-	<h1 class="text-center font-bold text-4xl p-2">Screenshot Site</h1>
+	<h1 class="text-center font-bold text-5xl p-2">Screenshot Site</h1>
+
+	<p class="text-gray-300 text-center text-xl">Download screenshots of your website in any resolution</p>
 
 	<div class="font-sans text-black flex justify-center mt-5">
 		<div class="border rounded overflow-hidden flex shakeX">
