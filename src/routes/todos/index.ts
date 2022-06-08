@@ -12,7 +12,10 @@ export const get: RequestHandler = async ({ url }) => {
 	// @ts-ignore
 	const fullPage = url.searchParams.get('fullPage');
 
-	const browser = await puppeteer.launch();
+	const browser = await puppeteer.launch({
+		headless: true,
+		args: ["--no-sandbox"]
+	});
 	const page = await browser.newPage();
 	// @ts-ignore
 	await page.goto(website);
