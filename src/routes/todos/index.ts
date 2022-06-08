@@ -1,6 +1,5 @@
 import type { RequestHandler } from '../../../.svelte-kit/types/src/routes/todos/__types';
-import puppeteer from 'puppeteer-core';
-import chrome from 'chrome-aws-lambda';
+import puppeteer from 'puppeteer';
 
 export const get: RequestHandler = async ({ url }) => {
 	let image = null;
