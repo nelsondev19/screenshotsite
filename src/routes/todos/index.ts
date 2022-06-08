@@ -1,5 +1,6 @@
 import type { RequestHandler } from '../../../.svelte-kit/types/src/routes/todos/__types';
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+import chrome from 'chrome-aws-lambda';
 
 export const get: RequestHandler = async ({ url }) => {
 	let image = null;
@@ -12,10 +13,15 @@ export const get: RequestHandler = async ({ url }) => {
 	// @ts-ignore
 	const fullPage = url.searchParams.get('fullPage');
 
-	const browser = await puppeteer.launch({
-		headless: true,
-		args: ['--no-sandbox']
-	});
+	const browser = await puppeteer.launch(
+		process.env.NODE_ENV === 'production'
+			? {
+					args: chrome.args,
+					executablePath: await chrome.executablePath,
+					headless: chrome.headless
+			  }
+			: {}
+	);
 	const page = await browser.newPage();
 	// @ts-ignore
 	await page.goto(website);
