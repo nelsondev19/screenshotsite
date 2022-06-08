@@ -9,4 +9,5 @@ node_modules
 .vercel
 .output
 /functions
-package-lock.json
+./package-lock.json
+.netlify
