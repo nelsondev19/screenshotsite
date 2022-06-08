@@ -12,15 +12,7 @@ export const get: RequestHandler = async ({ url }) => {
 	// @ts-ignore
 	const fullPage = url.searchParams.get('fullPage');
 
-	const browser = await puppeteer.launch(
-		process.env.NODE_ENV === 'production'
-			? {
-					args: chrome.args,
-					executablePath: await chrome.executablePath,
-					headless: chrome.headless
-			  }
-			: {}
-	);
+	const browser = await puppeteer.launch();
 	const page = await browser.newPage();
 	// @ts-ignore
 	await page.goto(website);
