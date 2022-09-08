@@ -34,7 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"puppeteer": "^16.1.0",
+		"puppeteer": "^17.1.2",
 		"@fontsource/fira-mono": "^4.5.0",
 		"@sveltejs/adapter-node": "^1.0.0-next.81",
 		"axios": "^0.27.2",
